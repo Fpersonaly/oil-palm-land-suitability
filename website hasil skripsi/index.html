@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | Dashboard Kesesuaian Lahan Kelapa Sawit</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- RIGHT CONTENT -->
+    <div class="login-right">
+
+      <div class="login-card">
+
+        <h3>Selamat Datang</h3>
+
+        <p>
+          Masuk untuk mengakses dashboard analisis
+          kesesuaian lahan
+        </p>
+
+        <!-- Error Message -->
+        <div class="error-msg" id="error-msg">
+          ❌ Email atau password salah.
+          Coba: peneliti@itsi.ac.id / itsi2025
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label>Email</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="peneliti@itsi.ac.id"
+            value="peneliti@itsi.ac.id">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label>Password</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="••••••••"
+            value="itsi2025">
+        </div>
+
+        <!-- Login Button -->
+        <button class="login-btn" onclick="doLogin()">
+          Masuk ke Dashboard →
+        </button>
+
+        <!-- Forgot Password -->
+        <a class="forgot-link">
+          Lupa password? Hubungi admin
+        </a>
+
+        <!-- Footer -->
+        <div class="login-itsi">
+          © 2025 · Institut Teknologi Sawit Indonesia · Medan
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip"></div>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Perbandingan Model | Kesesuaian Lahan Kelapa Sawit</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<div id="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <div class="sidebar">
+
+    <div class="sidebar-header">
+
+      <div class="sidebar-brand">
+
+        <div class="sidebar-icon">
+          🌴
+        </div>
+
+        <div>
+
+          <div class="sidebar-title">
+            Dashboard<br>
+            Kesesuaian Lahan
+          </div>
+
+          <div class="sidebar-sub">
+            ITSI · 2025
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="sidebar-section">
+
+      <div class="sidebar-section-label">
+        Navigasi Utama
+      </div>
+
+      <a href="dashboard.html"
+         class="nav-item">
+
+        <span class="nav-icon">📊</span>
+        Dashboard Utama
+
+      </a>
+
+    </div>
+
+    <div class="sidebar-section">
+
+      <div class="sidebar-section-label">
+        Hasil Pemodelan
+      </div>
+
+      <a href="decision-tree.html"
+         class="nav-item">
+
+        <span class="nav-icon">🌳</span>
+        Evaluasi Decision Tree
+
+      </a>
+
+      <a href="random-forest.html"
+         class="nav-item">
+
+        <span class="nav-icon">🌲</span>
+        Evaluasi Random Forest
+
+      </a>
+
+    </div>
+
+    <div class="sidebar-section">
+
+      <div class="sidebar-section-label">
+        Evaluasi
+      </div>
+
+      <a href="perbandingan.html"
+         class="nav-item active">
+
+        <span class="nav-icon">⚖️</span>
+        Perbandingan Model
+
+      </a>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="sidebar-footer">
+
+      <div class="user-info">
+
+        <div class="user-avatar">
+          FH
+        </div>
+
+        <div>
+
+          <div class="user-name">
+            Ferdy Hardiansyah
+          </div>
+
+          <div class="user-role">
+            Peneliti · 220203012
+          </div>
+
+        </div>
+
+      </div>
+
+      <button class="logout-btn"
+              onclick="window.location.href='index.html'">
+
+        ⎋ Keluar
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+      <div class="topbar-title">
+        Perbandingan Model
+      </div>
+
+      <div class="topbar-right">
+
+        <span class="badge-itsi">
+          STI 2022
+        </span>
+
+        <span style="font-size:13px;color:var(--gray-mid);">
+          Sumatra · 2025
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- PAGE -->
+    <div class="page active">
+
+      <!-- PAGE HEADER -->
+      <div class="page-heading">
+
+        <h1>
+          Perbandingan Model
+        </h1>
+
+        <p>
+          Evaluasi dan perbandingan performa
+          Decision Tree dan Random Forest
+          dalam mempelajari label kesesuaian
+          lahan berbasis data spasial.
+        </p>
+
+      </div>
+
+      <!-- ================= MODEL HEADER ================= -->
+      <div class="comparison-header">
+
+        <!-- DT -->
+        <div class="model-header-card dt">
+
+          <div class="model-icon">
+            🌿
+          </div>
+
+          <div class="model-name">
+            Decision Tree
+          </div>
+
+          <div class="model-desc">
+            CART · Gini · Max Depth 3 · K-Fold 5
+          </div>
+
+        </div>
+
+        <!-- RF -->
+        <div class="model-header-card rf">
+
+          <div class="model-icon">
+            🌲
+          </div>
+
+          <div class="model-name">
+            Random Forest
+          </div>
+
+          <div class="model-desc">
+            100 Trees · Bootstrap · sqrt Features · K-Fold 5
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= WINNER ================= -->
+      <div class="winner-section">
+
+        <div class="winner-title">
+          🏆 MODEL TERBAIK
+        </div>
+
+        <div class="winner-model">
+          Random Forest
+        </div>
+
+        <div class="winner-desc">
+
+          Random Forest menunjukkan performa
+          terbaik pada seluruh metrik evaluasi
+          dengan akurasi sebesar
+          <strong>97.99%</strong>
+          dan F1-Score sebesar
+          <strong>97.98%</strong>.
+
+          Model ini mampu menghasilkan
+          generalisasi yang lebih baik
+          dibandingkan Decision Tree dalam
+          memodelkan kesesuaian lahan
+          kelapa sawit di Pulau Sumatra.
+
+        </div>
+
+      </div>
+
+      <!-- ================= COMPARISON GRID ================= -->
+      <div class="comparison-grid">
+
+        <!-- METRIC COMPARISON -->
+        <div class="chart-card">
+
+          <div class="card-header">
+
+            <div class="card-title">
+              Perbandingan Metrik Evaluasi
+            </div>
+
+          </div>
+
+          <div class="card-body">
+
+            <!-- Accuracy -->
+            <div class="progress-item">
+
+              <div class="progress-header">
+                <span>Accuracy</span>
+                <span>DT 88.12% · RF 97.07%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill dt-fill"
+                     style="width:87.3%;">
+                </div>
+              </div>
+
+              <div class="progress-bar"
+                   style="margin-top:6px;">
+
+                <div class="progress-fill rf-fill"
+                     style="width:93.8%;">
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Precision -->
+            <div class="progress-item">
+
+              <div class="progress-header">
+                <span>Precision</span>
+                <span>DT 91.62% · RF 97.99%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill dt-fill"
+                     style="width:85.9%;">
+                </div>
+              </div>
+
+              <div class="progress-bar"
+                   style="margin-top:6px;">
+
+                <div class="progress-fill rf-fill"
+                     style="width:92.7%;">
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Recall -->
+            <div class="progress-item">
+
+              <div class="progress-header">
+                <span>Recall</span>
+                <span>DT 88.30% · RF 97.99%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill dt-fill"
+                     style="width:85.3%;">
+                </div>
+              </div>
+
+              <div class="progress-bar"
+                   style="margin-top:6px;">
+
+                <div class="progress-fill rf-fill"
+                     style="width:92.1%;">
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- F1 -->
+            <div class="progress-item">
+
+              <div class="progress-header">
+                <span>F1-Score</span>
+                <span>DT 89.00% · RF 97.98%</span>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill dt-fill"
+                     style="width:85.6%;">
+                </div>
+              </div>
+
+              <div class="progress-bar"
+                   style="margin-top:6px;">
+
+                <div class="progress-fill rf-fill"
+                     style="width:92.4%;">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- F1 PER CLASS -->
+        <div class="chart-card">
+
+          <div class="card-header">
+
+            <div class="card-title">
+              F1-Score per Kelas
+            </div>
+
+          </div>
+
+          <div class="card-body">
+
+            <!-- DT -->
+            <div style="margin-bottom:24px;">
+
+              <div style="font-size:12px;
+                          font-weight:700;
+                          color:#3498db;
+                          margin-bottom:10px;">
+
+                DECISION TREE
+
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S1</span>
+                  <span>88.4%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:88.4%;background:var(--s1)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S2</span>
+                  <span>85.6%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:85.6%;background:var(--s2)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S3</span>
+                  <span>83.7%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:83.7%;background:var(--s3)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas N</span>
+                  <span>82.6%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:82.6%;background:var(--n)">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- RF -->
+            <div>
+
+              <div style="font-size:12px;
+                          font-weight:700;
+                          color:var(--green-bright);
+                          margin-bottom:10px;">
+
+                RANDOM FOREST
+
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S1</span>
+                  <span>95.2%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:95.2%;background:var(--s1)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S2</span>
+                  <span>93.8%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:93.8%;background:var(--s2)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas S3</span>
+                  <span>91.4%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:91.4%;background:var(--s3)">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-item">
+                <div class="progress-header">
+                  <span>Kelas N</span>
+                  <span>89.2%</span>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress-fill"
+                       style="width:89.2%;background:var(--n)">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= TABLE ================= -->
+      <div class="card"
+           style="margin-top:20px;">
+
+        <div class="card-header">
+
+          <div class="card-title">
+            Tabel Perbandingan Lengkap
+          </div>
+
+        </div>
+
+        <div class="card-body"
+             style="overflow-x:auto;">
+
+          <table class="matrix-table">
+
+            <thead>
+
+              <tr>
+
+                <th>Metrik</th>
+                <th>Decision Tree</th>
+                <th>Random Forest</th>
+                <th>Selisih</th>
+                <th>Model Terbaik</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>Akurasi</td>
+                <td>87.30%</td>
+
+                <td style="color:var(--green-bright);
+                           font-weight:700;">
+
+                  93.80%
+
+                </td>
+
+                <td>+6.50%</td>
+                <td>🌲 RF</td>
+
+              </tr>
+
+              <tr>
+
+                <td>Precision</td>
+                <td>85.90%</td>
+
+                <td style="color:var(--green-bright);
+                           font-weight:700;">
+
+                  92.70%
+
+                </td>
+
+                <td>+6.80%</td>
+                <td>🌲 RF</td>
+
+              </tr>
+
+              <tr>
+
+                <td>Recall</td>
+                <td>85.30%</td>
+
+                <td style="color:var(--green-bright);
+                           font-weight:700;">
+
+                  92.10%
+
+                </td>
+
+                <td>+6.80%</td>
+                <td>🌲 RF</td>
+
+              </tr>
+
+              <tr>
+
+                <td>F1-Score</td>
+                <td>85.60%</td>
+
+                <td style="color:var(--green-bright);
+                           font-weight:700;">
+
+                  92.40%
+
+                </td>
+
+                <td>+6.80%</td>
+                <td>🌲 RF</td>
+
+              </tr>
+
+              <tr>
+
+                <td>Interpretabilitas</td>
+
+                <td style="color:#3498db;
+                           font-weight:700;">
+
+                  Tinggi ✓
+
+                </td>
+
+                <td>Sedang</td>
+                <td>–</td>
+                <td>🌿 DT</td>
+
+              </tr>
+
+              <tr>
+
+                <td>Resistensi Overfitting</td>
+
+                <td>Rendah</td>
+
+                <td style="color:var(--green-bright);
+                           font-weight:700;">
+
+                  Tinggi ✓
+
+                </td>
+
+                <td>–</td>
+                <td>🌲 RF</td>
+
+              </tr>
+
+              <tr>
+
+                <td>Waktu Pelatihan</td>
+
+                <td style="color:#3498db;
+                           font-weight:700;">
+
+                  Cepat ✓
+
+                </td>
+
+                <td>Lebih Lama</td>
+                <td>–</td>
+                <td>🌿 DT</td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- ================= KESIMPULAN ================= -->
+      <div class="card"
+           style="margin-top:20px;">
+
+        <div class="card-header">
+
+          <div class="card-title">
+            Kesimpulan Perbandingan
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          <p class="model-desc">
+
+            Berdasarkan hasil evaluasi,
+            algoritma Random Forest memiliki
+            performa klasifikasi yang lebih baik
+            dibandingkan Decision Tree pada
+            seluruh metrik evaluasi.
+
+            Namun demikian, Decision Tree tetap
+            memiliki keunggulan pada aspek
+            interpretabilitas model dan waktu
+            pelatihan yang lebih cepat.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

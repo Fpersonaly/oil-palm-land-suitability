@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard Utama | Kesesuaian Lahan Kelapa Sawit</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+  <div id="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <div class="sidebar">
+
+      <div class="sidebar-header">
+
+        <div class="sidebar-brand">
+
+          <div class="sidebar-icon">
+            🌴
+          </div>
+
+          <div>
+            <div class="sidebar-title">
+              Dashboard<br>
+              Kesesuaian Lahan
+            </div>
+
+            <div class="sidebar-sub">
+              ITSI · 2025
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="sidebar-section">
+
+        <div class="sidebar-section-label">
+          Navigasi Utama
+        </div>
+
+        <a href="dashboard.html"
+           class="nav-item active">
+
+          <span class="nav-icon">📊</span>
+          Dashboard Utama
+
+        </a>
+
+      </div>
+
+      <div class="sidebar-section">
+
+        <div class="sidebar-section-label">
+          Hasil Pemodelan
+        </div>
+
+        <a href="decision-tree.html"
+           class="nav-item">
+
+          <span class="nav-icon">🌳</span>
+          Evaluasi Decision Tree
+
+        </a>
+
+        <a href="random-forest.html"
+           class="nav-item">
+
+          <span class="nav-icon">🌲</span>
+          Evaluasi Random Forest
+
+        </a>
+
+      </div>
+
+      <div class="sidebar-section">
+
+        <div class="sidebar-section-label">
+          Evaluasi
+        </div>
+
+        <a href="perbandingan.html"
+           class="nav-item">
+
+          <span class="nav-icon">⚖️</span>
+          Perbandingan Model
+
+        </a>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="sidebar-footer">
+
+        <div class="user-info">
+
+          <div class="user-avatar">
+            FH
+          </div>
+
+          <div>
+            <div class="user-name">
+              Ferdy Hardiansyah
+            </div>
+
+            <div class="user-role">
+              Peneliti · 220203012
+            </div>
+          </div>
+
+        </div>
+
+        <button class="logout-btn"
+                onclick="window.location.href='index.html'">
+
+          ⎋ Keluar
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="main-content">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+
+        <div class="topbar-title">
+          Dashboard Utama
+        </div>
+
+        <div class="topbar-right">
+
+          <span class="badge-itsi">
+            STI 2022
+          </span>
+
+          <span style="font-size:13px;color:var(--gray-mid);">
+            Sumatra · 2025
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- PAGE -->
+      <div class="page active">
+
+        <!-- PAGE HEADER -->
+        <div class="page-heading">
+
+          <h1>
+            Dashboard Utama
+          </h1>
+
+          <p>
+            Ringkasan distribusi kesesuaian lahan
+            kelapa sawit di Pulau Sumatra
+          </p>
+
+        </div>
+
+        <!-- ================= STATS ================= -->
+        <div class="stats-grid">
+
+          <div class="stat-card s1">
+
+            <div class="stat-card-icon">
+              ✅
+            </div>
+
+            <div class="stat-card-label">
+              S1 – Sangat Sesuai
+            </div>
+
+            <div class="stat-card-value">
+              14.53%
+            </div>
+
+            <div class="stat-card-sub">
+              ≈ 397 data klasifikasi
+            </div>
+
+          </div>
+
+          <div class="stat-card s2">
+
+            <div class="stat-card-icon">
+              ⚠️
+            </div>
+
+            <div class="stat-card-label">
+              S2 – Cukup Sesuai
+            </div>
+
+            <div class="stat-card-value">
+              60.91%
+            </div>
+
+            <div class="stat-card-sub">
+              ≈ 1664 data klasifikasi
+            </div>
+
+          </div>
+
+          <div class="stat-card s3">
+
+            <div class="stat-card-icon">
+              🔶
+            </div>
+
+            <div class="stat-card-label">
+              S3 – Sesuai Marginal
+            </div>
+
+            <div class="stat-card-value">
+              18.34%
+            </div>
+
+            <div class="stat-card-sub">
+              ≈ 501 data klasifikasi
+            </div>
+
+          </div>
+
+          <div class="stat-card n">
+
+            <div class="stat-card-icon">
+              ❌
+            </div>
+
+            <div class="stat-card-label">
+              N – Tidak Sesuai
+            </div>
+
+            <div class="stat-card-value">
+              6.22%
+            </div>
+
+            <div class="stat-card-sub">
+              ≈ 170 data klasifikasi
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= DASHBOARD GRID ================= -->
+        <div class="dash-grid">
+
+          <!-- ================= LEFT SIDE ================= -->
+          <div style="display:flex;flex-direction:column;gap:20px;">
+
+            <!-- MAP -->
+            <div class="card">
+
+              <div class="card-header">
+
+                <div class="card-title">
+                  Peta Kesesuaian Lahan – Sumatra
+                </div>
+
+                <div class="card-badge">
+                  Overview
+                </div>
+
+              </div>
+
+              <div class="map-container">
+
+                <img
+                  src="assets/peta-klasifikasi.png"
+                  alt="Peta Kesesuaian Lahan Sumatra"
+                  class="map-image">
+
+              </div>
+
+            </div>
+
+            <!-- CHART GRID -->
+            <div class="chart-grid">
+
+              <!-- BAR CHART -->
+              <div class="card">
+
+                <div class="card-header">
+
+                  <div class="card-title">
+                    Distribusi Kelas
+                  </div>
+
+                </div>
+
+                <div class="card-body">
+
+                  <img
+                    src="assets/distribusi-bar.png"
+                    alt="Distribusi Kelas"
+                    class="chart-img">
+
+                </div>
+
+              </div>
+
+              <!-- DONUT -->
+              <div class="card">
+
+                <div class="card-header">
+
+                  <div class="card-title">
+                    Proporsi Kelas
+                  </div>
+
+                </div>
+
+                <div class="card-body">
+
+                  <img
+                    src="assets/distribusi-donut.png"
+                    alt="Proporsi Kelas"
+                    class="chart-img donut-chart">
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- ================= RIGHT SIDE ================= -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <!-- VARIABEL BIOFISIK -->
+            <div class="card">
+
+              <div class="card-header">
+
+                <div class="card-title">
+                  Variabel Biofisik
+                </div>
+
+              </div>
+
+              <div class="card-body">
+
+                <div class="info-list">
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      🌡️ Suhu Rata-rata
+                    </span>
+
+                    <span class="info-row-val">
+                      24–28 °C
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      🌧️ Curah Hujan
+                    </span>
+
+                    <span class="info-row-val">
+                      1700–3000 mm
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      📐 Kemiringan Lereng
+                    </span>
+
+                    <span class="info-row-val">
+                      &lt;8%
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      🧪 pH Tanah
+                    </span>
+
+                    <span class="info-row-val">
+                      5.0–6.5
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      🪨 Tekstur Tanah
+                    </span>
+
+                    <span class="info-row-val">
+                      Halus-Sedang
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      📏 Kedalaman Tanah
+                    </span>
+
+                    <span class="info-row-val">
+                      &gt;100 cm
+                    </span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-row-label">
+                      🌿 Tutupan Lahan
+                    </span>
+
+                    <span class="info-row-val">
+                      MODIS 30m
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- EVALUASI MODEL -->
+            <div class="card">
+
+              <div class="card-header">
+
+                <div class="card-title">
+                  Evaluasi Performa Model
+                </div>
+
+              </div>
+
+              <div class="card-body">
+
+                <p class="model-desc">
+
+                  Performa algoritma Decision Tree
+                  dan Random Forest dalam mempelajari
+                  label kesesuaian lahan hasil klasifikasi
+                  rule-based FAO dan BBSDLP.
+
+                </p>
+
+                <!-- DT -->
+                <div class="progress-item">
+
+                  <div class="progress-header">
+                    <span>Decision Tree</span>
+                    <span class="score-text">88.30%</span>
+                  </div>
+
+                  <div class="progress-bar">
+                    <div class="progress-fill dt-fill"
+                         style="width:87.3%;">
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- RF -->
+                <div class="progress-item">
+
+                  <div class="progress-header">
+                    <span>Random Forest</span>
+                    <span class="score-text">97.99%</span>
+                  </div>
+
+                  <div class="progress-bar">
+                    <div class="progress-fill rf-fill"
+                         style="width:93.8%;">
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- F1 DT -->
+                <div class="progress-item">
+
+                  <div class="progress-header">
+                    <span>F1-Score (DT)</span>
+                    <span class="score-text">89.00%</span>
+                  </div>
+
+                  <div class="progress-bar">
+                    <div class="progress-fill f1dt-fill"
+                         style="width:85.6%;">
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- F1 RF -->
+                <div class="progress-item">
+
+                  <div class="progress-header">
+                    <span>F1-Score (RF)</span>
+                    <span class="score-text">97.98%</span>
+                  </div>
+
+                  <div class="progress-bar">
+                    <div class="progress-fill f1rf-fill"
+                         style="width:92.4%;">
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- FEATURE IMPORTANCE -->
+            <div class="card">
+
+              <div class="card-header">
+
+                <div class="card-title">
+                  Feature Importance
+                </div>
+
+              </div>
+
+              <div class="card-body">
+
+                <p class="model-desc">
+
+                  Tingkat kontribusi masing-masing
+                  variabel biofisik terhadap prediksi
+                  kesesuaian lahan menggunakan
+                  algoritma Random Forest.
+
+                </p>
+
+                <div class="feature-wrapper">
+
+                  <img
+                    src="assets/feature-importance.png"
+                    alt="Feature Importance Random Forest"
+                    class="feature-img">
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
